@@ -1,0 +1,484 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+    overflow: hidden;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+body{
+    font-family:sans-serif;
+    background:url("color-text-1279813.jpg");
+    background-repeat: no-repeat;
+    max-height:100vh;
+    overflow-x:hidden;
+    overflow: hidden;
+    overflow-y: hidden;
+    overflow-x: hidden;
+
+}
+/**** loader **/
+.loader-container{
+	width:100%;
+	height:100vh;
+	overflow:hidden;
+	background:#8c7ae6;
+	position:absolute;
+	top:0;
+	left:0;
+	display:flex;
+	justify-content: center;
+	align-items:center;
+	 user-select: none;
+	 -webkit-user-drag: none; 
+	 transition:opacity 0.5s ease-in-out;
+
+}
+.loader-container img{
+	width:100px;
+	box-shadow: 0 0 10px;
+	border-radius:50px;
+	
+    user-select: none;
+	 -webkit-user-drag: none; 
+
+	 animation:image 0.5s ease-in-out infinite;
+
+}
+
+@keyframes image{
+  0% {
+    transform:rotate(0deg);
+  }
+  
+  100% {
+    transform:rotate(360deg);
+  }
+}
+
+
+
+/*************************************************/
+.score-h1{
+    position:absolute;
+    top:10px;
+    left:34%;
+    transform:translate(-50%);
+}
+.score{
+    color:#6c5ce7;
+}
+.timer{
+    position:absolute;
+    top:10px;
+    right:34%;
+    transform:translate(50%);
+    text-transform: uppercase;
+}
+.time{
+    color:#6c5ce7;
+}
+.startBtn{
+    position:absolute;
+    top:80px;
+    left:34%;
+    transform:translate(-50%);
+    border:0px;
+    padding:10px 20px;
+    background:#6c5ce7;
+    color:#000;
+    border-radius:5px;
+    font-size:16px;
+    font-weight:900;
+
+    outline:none;
+}
+
+.startBtnActive:hover,
+.restartBtn:hover{
+    background:#6452e9;
+    cursor: pointer;
+
+    
+}
+.startBtnActive:active,
+.restartBtn:active{
+    padding:9px 19px;
+    cursor: pointer;
+
+    
+
+}
+
+.restartBtn{
+    position:absolute;
+    top:80px;
+    right:35%;
+    transform:translate(50%);
+    cursor: pointer;
+    border:0px;
+    padding:10px 20px;
+    background:#6c5ce7;
+    color:#000;
+    border-radius:5px;
+    font-size:16px;
+    font-weight:900;
+
+    outline:none;
+}
+.sound{
+    position:absolute;
+    top:10px;
+    left:50%;
+    transform:translatex(-50%);
+}
+.sound button{
+    cursor: pointer;
+    border:0px;
+    padding:10px 20px;
+    background:#000;
+    color:#fff;
+    border-radius:5px;
+}
+.sound button i{
+    font-size:16px;
+}
+
+
+
+/************  MAIN GAME ***********/
+.game{
+    position:absolute;
+    left:50%;
+    top:130px;
+    transform:translate(-50%);
+    background:#f1c40f;
+    width:600px;
+    margin:auto;
+    height:500px;
+    display:flex;
+    justify-content: space-around;
+    flex-wrap:wrap;   
+    border-radius:3px;
+    box-shadow:  5px 5px 15px black, -10px 0px  30px black;
+
+}
+.hole{
+    width:190px;
+    height:200px;
+    background-position:center 100%;
+    position:relative;
+    background:#f1c40f;
+    z-index:99; /*  tu aq z indexs ar mivutitebt ferenti dafaravs child-s  , anu amas imito vutiteb ro mart tavis ferentshi chandes sxvebshi ara  */
+    -webkit-user-drag: none; 
+    user-select: none;
+  
+}
+.hole-img{
+    position:absolute;
+    top:105%;
+    transform:translate(0,-100%);
+    z-index:99999999;
+    -webkit-user-drag: none; 
+    user-select: none;
+
+}
+.mole-img{
+    position:absolute;
+    top:100%;
+    left:50%;
+    transform: translate(-50%);
+    z-index:-999;
+    height:100px;
+    transition:all 0.2s ease-in-out;
+    -webkit-user-drag: none; 
+    user-select: none;
+}
+/* qevda  virtxebi ro damalos */ 
+.hole:nth-child(7),
+.hole:nth-child(8),
+.hole:nth-child(9){
+    border:0;
+    height:100px;
+}
+
+ .up .mole-img{
+    top:30%;
+
+   
+} 
+/*******************  rules buttons ******************/
+
+.btn{
+    cursor: pointer;
+    border:0px;
+    padding:10px 20px;
+    background:#000;
+    color:#fff;
+    border-radius:5px;
+}
+.btn:focus{
+    outline:0;
+}
+.btn:hover{
+    background:#222;
+}
+.btn:active{
+    transform:scale(0.98);
+}
+.rules-btn{
+    position:absolute;
+    top:30px;
+    left:30px;
+}
+.rules{
+    position:absolute;
+    top:0;
+    left:-400px;
+    background:#333;
+    color:#fff;
+    min-height:100vh;
+    width:330px;
+    padding:20px;
+    line-height:1.5;
+    transition: 0.2s ease-in-out;
+    z-index:99999999;
+}
+.change{
+    left:0px;
+    
+}
+/*******************  leaderBoard ******************/
+
+
+.leader-btn{
+    position:absolute;
+    top:30px;
+    right:30px;
+    cursor: pointer;
+    border:0px;
+    padding:10px 20px;
+    background:#000;
+    color:#fff;
+    border-radius:5px;
+}
+.leader-btn:focus{
+    outline:0;
+}
+.leader-btn:hover{
+    background:#222;
+}
+.leader-btn:active{
+    transform:scale(0.98);
+}
+.leader-list{
+    position:absolute;
+    top:0;
+    right:-500px;
+    background:#333;
+    color:#fff;
+    min-height:100vh;
+    width:450px;
+    padding:20px;
+    line-height:1.5;
+    transition: 0.2s ease-in-out;
+    z-index:99999999;
+
+
+}
+.leader-close{
+   
+    cursor: pointer;
+    border:0px;
+    padding:10px 20px;
+    background:#000;
+    color:#fff;
+    border-radius:5px;
+}
+.leader-close:focus{
+    outline:0;
+}
+.leader-close:hover{
+    background:#222;
+}
+.leader-close:active{
+    transform:scale(0.98);
+}
+.ch{
+    right:0px;
+}
+/***********8 LEADERBOADR TABLE ********************/
+
+.content-table{
+    border-collapse: collapse;
+    margin:25px 0;
+    font-size: 0.9em;
+    min-width:400px;
+    border-radius:5px 5px 0 0;
+    overflow: hidden;
+    box-shadow:0 0 20px rgba(0,0,0,0.5);
+    color:black;
+} 
+.content-table thead tr{
+    background-color:#6452e9;
+    color:#fff;
+    text-align:left;
+    font-weight:bold;
+    
+}
+
+.content-table th,
+.content-table td{
+
+    padding:12px 15px;
+}
+.content-table tbody tr{
+    border-bottom:1px solid #ddd;
+}
+.content-table tbody tr:nth-child(even){
+    background-color:#f3f3f3f3;
+}
+.content-table tbody tr:nth-child(odd){
+    background-color:#fff;
+}
+.content-table tbody tr:last-child{
+    border-bottom:4px solid #6452e9;
+}
+/******************************************************************/
+/******************************************************************/
+/******************************************************************/
+/*****************      MEDIA    **********************************/
+/*****************      MEDIA    **********************************/
+/*****************      MEDIA    **********************************/
+/******************************************************************/
+/******************************************************************/
+/******************************************************************/
+/******************************************************************/
+
+@media (max-width:800px){
+    /************  MAIN GAME ***********/
+    .game{
+        position:absolute;
+        left:50%;
+        top:180px;
+        width:450px;
+        margin:0;
+        height:400px;
+
+    }
+    .hole{
+        width:150px;
+        height:150px;
+    }
+    .hole-img{
+        width:150px;
+        top:105%;
+    }
+
+    .up .mole-img{
+        top:20%;
+
+    } 
+    /************  MAIN GAME ***********/
+
+
+
+
+    /******************   Central Buttons **************/
+    /******************   Central Buttons **************/
+    /******************   Central Buttons **************/
+    /******************   Central Buttons **************/
+        
+    .score-h1{
+        top:80px;
+        left:20%;
+        font-size:29px;
+    }
+  
+    .timer{
+        top:80px;
+        right:20%;
+    }
+  
+    .startBtn{
+        top:125px;
+        left:20%;
+    }
+
+    .restartBtn{
+        top:125px;
+        right:23%;
+        padding:10px 20px;
+        font-size:16px;
+        font-weight:900;
+    }
+    /******************   Central Buttons **************/
+
+    
+
+
+}
+/***************************************************************/
+/***************************************************************/
+/***************************************************************/
+
+
+@media (max-width:400px){
+
+
+
+
+
+    /******************   Central Buttons **************/
+    /******************   Central Buttons **************/
+    /******************   Central Buttons **************/
+    /******************   Central Buttons **************/
+        
+    .score-h1{
+        top:80px;
+        left:20%;
+        font-size:20px;
+
+    }
+  
+    .timer{
+        top:80px;
+        right:20%;
+        font-size:20px;
+
+
+    }
+  
+    .startBtn{
+        top:125px;
+        left:20%;
+        font-size:16px;
+        padding:5px 10px;
+
+    }
+
+    .restartBtn{
+        top:125px;
+        right:23%;
+        padding:5px 10px;
+        font-size:16px;
+        font-weight:900;
+        font-size:16px;
+
+    }
+    /******************   Central Buttons **************/
+    .leader-btn{
+        position:absolute;
+        right:0px;
+    }
+    .btn{
+        position:absolute;
+        left:0px;
+    }
+    
+
+
+}
+
+
+

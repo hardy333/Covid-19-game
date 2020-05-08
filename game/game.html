@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KillCovid</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style/virusStyle.css">
+    <link rel="icon" href="virus.svg">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <script src="https://kit.fontawesome.com/e44b1d70e7.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!--------------   BUTTONS ----------->
+
+    <h1 class="score-h1">SCORE: <span class="score">0</span> </h1>
+    <h1 class="timer">timer :<span class="time">00</span></h1>
+    <button class="startBtn startBtnActive">START GAME </button>
+    <button class="restartBtn" onclick="restartGame()">RESTART GAME </button>
+
+    <div class="sound">
+        <button class="aBtn"><i class="fas fa-volume-mute "></i></button>
+        <button class="bBtn"><i class="fas fa-volume-up"></i></button>
+
+    </div>
+
+
+
+
+
+    <!----------------------------  main Game ------>
+    <div class="game">
+        <div class="hole  hole1" draggable="false">
+            <img class="hole-img" src="dirt.svg" draggable="false">
+            <img class="mole-img" src="virus.png" alt="" draggable="false">
+        </div>
+        <div class="hole  hole2">
+            <img class="hole-img" src="dirt.svg" alt="" draggable="false">
+            <img class="mole-img" src="virus.png" alt="" draggable="false">
+
+        </div>
+        <div class="hole  hole3">
+            <img class="hole-img" src="dirt.svg" alt="" draggable="false">
+            <img class="mole-img" src="virus.png" alt="" draggable="false">
+
+        </div>
+        <div class="hole  hole4">
+            <img class="hole-img" src="dirt.svg" alt="" draggable="false">
+            <img class="mole-img" src="virus.png" alt="" draggable="false">
+
+        </div>
+        <div class="hole hole5">
+            <img class="hole-img" src="dirt.svg" alt="" draggable="false">
+            <img class="mole-img" src="virus.png" alt="" draggable="false">
+
+        </div>
+        <div class="hole  hole6">
+            <img class="hole-img" src="dirt.svg" alt="" draggable="false">
+            <img class="mole-img" src="virus.png" alt="" draggable="false">
+
+        </div>
+
+        <!-- qveda  isini ro dafaros  -->
+        <div class="hole hole7"></div>
+        <div class="hole hole8"></div>
+        <div class="hole hole9"></div>
+
+
+    </div>
+    <!----------------------------------- info buttons ----------->
+
+    <!--------rules------------->
+    <button id="rules-btn" class="btn rules-btn">Show rules</button>
+    <div id="rules" class="rules">
+        <p>თამაშის დაწყებისთანავე თქვენ შეტაკება გიწევთ მტრის ერთ-ერთ შენაერთთან, ვირუსები ამოდიან ორმოებიდან და თავს
+            ვერაგულად გესხმიან.
+        </p>
+        <br>
+        <p>თქვენ უნდა მოახერხოთ და მოცემულ დროში რაც შეიძლება მეტი ვირუსი დახოცოთ - მათზე კურსორის დაწკაპებით .
+        </p>
+        <br>
+        <p>გახსოვდეთ! ამ ბრძოლაში გაიმარჯვებს მხოლოდ უძლიერესი, ხოლო ის ადამიანი რომელიც ყველაზე მეტ ვირუსს მოკლავს,
+            დაიმსახურებს საუკუნო დიდებას. დღეს, სწორედ მსგავსი ადამიანების ხელთაა კაცობრიობის ბედ-იღბალი. </p>
+        <br>
+        <p>ჰო და კიდე , თამაშის მერე ხელების დაბანვა არ დაგავიწყდეს! </p>
+        <br>
+        <p>გისურვებ წრმატებას.</p>
+        <br>
+        <button id="close-btn" class="btn close-btn">Close</button>
+    </div>
+
+    <!--  leaderBoard -->
+    <button class="leader-btn">LeaderBouard</button>
+
+    <div class="leader-list">
+        <table class="content-table">
+            <thead>
+                <tr>
+                    <th>Rank</th>
+                    <th>Name</th>
+                    <th>Score</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td class="nick"></td>
+                    <td class="leaderboardScore"></td>
+                    <td class="date"></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+
+                    <td class="nick"></td>
+                    <td class="leaderboardScore"></td>
+                    <td class="date"></td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td class="nick"></td>
+                    <td class="leaderboardScore"></td>
+                    <td class="date"></td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td class="nick"></td>
+                    <td class="leaderboardScore"></td>
+                    <td class="date"></td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td class="nick"></td>
+                    <td class="leaderboardScore"></td>
+                    <td class="date"></td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td class="nick"></td>
+                    <td class="leaderboardScore"></td>
+                    <td class="date"></td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td class="nick"></td>
+                    <td class="leaderboardScore"></td>
+                    <td class="date"></td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td class="nick"></td>
+                    <td class="leaderboardScore"></td>
+                    <td class="date"></td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td class="nick"></td>
+                    <td class="leaderboardScore"></td>
+                    <td class="date"></td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td class="nick"></td>
+                    <td class="leaderboardScore"></td>
+                    <td class="date"></td>
+                </tr>
+
+            </tbody>
+        </table>
+        <button class="leader-close">Close</button>
+    </div>
+
+    <!-------------------------------------------------------------->
+    <!-------------------------------------------------------------->
+    <!------------------------VIRUS STYLE -------------------------->
+    <!------------------------VIRUS STYLE -------------------------->
+    <!------------------------VIRUS STYLE -------------------------->
+    <!------------------------VIRUS STYLE -------------------------->
+    <!------------------------VIRUS STYLE -------------------------->
+    <!-------------------------------------------------------------->
+    <!-------------------------------------------------------------->
+    <!-------------------------------------------------------------->
+
+
+    <!--   GREEN  virus -->
+    <div class="wrapper-red-virus">
+        <div class="red-virus-conteiner">
+            <div class="red-virus-eyes">
+                <div class="red-virus-eye"></div>
+                <div class="red-virus-eye"></div>
+            </div>
+            <img src="movingEye/virus.png" alt="">
+        </div>
+    </div>
+
+    <script>
+        const redVirusEye = document.querySelectorAll(".red-virus-eye");
+        document.querySelector("body").addEventListener("mousemove", eyeBall);
+
+        function eyeBall() {
+
+            redVirusEye.forEach(function (eye) {
+                let x = (eye.getBoundingClientRect().left) + (eye.clientWidth / 2);
+                let y = (eye.getBoundingClientRect().top) + (eye.clientHeight / 2);
+
+
+                let radian = Math.atan2(event.pageX - x, event.pageY - y);
+
+                let rot = (radian * (180 / Math.PI) * -1) + 270;
+
+
+
+                eye.style.transform = "rotate(" + rot + "deg)";
+
+            })
+
+        }
+
+
+
+    </script>
+    <!--   GREEN  virus -->
+
+
+    <!--  VIRUS 3 -->
+    <div class="wrapper-3-virus">
+        <div class="container3">
+            <div class="eyes3">
+                <div class="eye3"></div>
+                <div class="eye3"></div>
+            </div>
+            <img src="movingEye/virus3.png" alt="">
+        </div>
+    </div>
+
+    <script>
+        const eye3 = document.querySelectorAll(".eye3");
+        document.querySelector("body").addEventListener("mousemove", eyeBall);
+
+        function eyeBall() {
+
+            eye3.forEach(function (eye) {
+                let x = (eye.getBoundingClientRect().left) + (eye.clientWidth / 2);
+                let y = (eye.getBoundingClientRect().top) + (eye.clientHeight / 2);
+
+
+                let radian = Math.atan2(event.pageX - x, event.pageY - y);
+
+                let rot = (radian * (180 / Math.PI) * -1) + 270;
+
+
+
+                eye.style.transform = "rotate(" + rot + "deg)";
+
+            })
+
+        }
+
+
+
+    </script>
+    <!---------------------------------------------------------------->
+
+
+
+    <!--  GREEN virus -->
+    <div class="wrapper-green-virus">
+        <div class="container">
+            <div class="eyes">
+                <div class="eye"></div>
+                <div class="eye"></div>
+            </div>
+            <img src="movingEye/bacteria.png" alt="">
+        </div>
+    </div>
+
+    <script>
+        const eye = document.querySelectorAll(".eye");
+        document.querySelector("body").addEventListener("mousemove", eyeBall);
+
+        function eyeBall() {
+
+            eye.forEach(function (eye) {
+                let x = (eye.getBoundingClientRect().left) + (eye.clientWidth / 2);
+                let y = (eye.getBoundingClientRect().top) + (eye.clientHeight / 2);
+
+
+                let radian = Math.atan2(event.pageX - x, event.pageY - y);
+
+                let rot = (radian * (180 / Math.PI) * -1) + 270;
+
+
+
+                eye.style.transform = "rotate(" + rot + "deg)";
+
+            })
+
+        }
+    </script>
+
+
+
+    <!-------------------------------------->
+    <div class="loader-container">
+        <img src="loaderVirus.png">
+    </div>
+
+    <script type="text/javascript">
+        const loaderContainer = document.querySelector(".loader-container");
+        window.onload = function () {
+            setTimeout(() => {
+                loaderContainer.style.opacity = "0";
+                loaderContainer.style.display = "none";
+            }, 1000);
+        }
+    </script>
+
+
+
+
+
+
+
+
+    <script src="game.js"></script>
+
+</body>
+
+</html>

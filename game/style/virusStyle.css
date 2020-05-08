@@ -1,0 +1,230 @@
+/*****  GREEN VIRUS ********/
+.wrapper-red-virus{
+    display:inline-block;
+    position:absolute;
+    top:100px;
+    left:50px;
+}
+.red-virus-conteiner{
+    padding-right:0px;
+    display:inline-block;
+    position:relative;
+    width:150px;
+}
+.red-virus-conteiner img{
+  width:150px;
+
+}
+.red-virus-eyes{
+  width:70px;
+  height:50px;
+  position:absolute;
+  top:36px;
+  left:49%;
+  transform:translate(-50%);
+  display:flex;
+  justify-content: space-around;
+  align-items:center;
+
+}
+.red-virus-eye{
+  width:25px;
+  height:25px;
+  background:#fff;
+  border-radius:50%;
+  position:relative;
+
+}
+.red-virus-eye::before{
+  content:"";
+  position:absolute;
+  display:block;
+  width:16px;
+  height:16px;
+  top:5px;
+  left:2px;
+  background:#111;
+  border-radius:50%;
+
+
+
+}
+.red-virus-conteiner::before{
+
+    content:"";
+    display:block;
+    position:absolute;
+    width:45px;
+    height:17px;
+    top:60%;
+    left:19%;
+    transform:translate(50%,-50%);
+    background:#fff;
+    border-bottom-left-radius:70px;
+    border-bottom-right-radius:70px;
+    transition:0.3s;
+}
+.red-virus-conteiner:hover::before{
+    height:10px;
+    border-radius:3px;   
+
+}
+/****************************************************************/
+/****************************************************************/
+/****************************************************************/
+/****************************************************************/
+/****************************************************************/
+
+/*******   VIRUS 3 *********/
+.wrapper-3-virus{
+
+    display:inline-block;
+    position:absolute;
+    top:400px;
+    left:10px;
+
+}
+.container3{
+    padding-right:0px;
+    display:inline-block;
+    position:relative;
+    width:150px;
+}
+.container3 img{
+  width:150px;
+
+}
+.eyes3{
+  width:90px;
+  height:50px;
+  position:absolute;
+  top:36px;
+  left:50%;
+  transform:translate(-50%);
+  display:flex;
+  justify-content: space-around;
+  align-items:center;
+
+}
+.eye3{
+  width:28px;
+  height:28px;
+  background:#44bd32;
+  border-radius:50%;
+  position:relative;
+
+}
+.eye3::before{
+  content:"";
+  position:absolute;
+  display:block;
+  width:15px;
+  height:15px;
+  top:5px;
+  left:2px;
+  background:#111;
+  border-radius:50%;
+
+
+
+}
+.container3::before{
+
+    content:"";
+    display:block;
+    position:absolute;
+    width:50px;
+    height:20px;
+    top:61%;
+    left:16%;
+    transform:translate(50%,-50%);
+    background:#333;
+    border-bottom-left-radius:70px;
+    border-bottom-right-radius:70px;
+    transition:0.3s;
+}
+.container3:hover::before{
+    height:13px;
+    border-radius:3px;   
+
+}
+/*******   VIRUS 3 *********/
+/******************************************************************/
+/****************************************************************/
+/****************************************************************/
+/****************************************************************/
+/****************************************************************/
+/****************************************************************/
+
+
+
+/****** green virus *********/
+.wrapper-green-virus{
+    display:inline-block;
+    position:absolute;
+    top:200px;
+    right:90px;
+}
+
+.container{
+    padding-right:0px;
+    display:inline-block;
+    position:relative;
+    width:150px;
+}
+.container img{
+  width:150px;
+
+}
+.eyes{
+  width:100px;
+  height:50px;
+  position:absolute;
+  top:40px;
+  left:48%;
+  transform:translate(-50%);
+  display:flex;
+  justify-content: space-around;
+  align-items:center;
+
+}
+.eye{
+  width:34px;
+  height:34px;
+  background:#fff;
+  border-radius:50%;
+  position:relative;
+
+}
+.eye::before{
+  content:"";
+  position:absolute;
+  display:block;
+  width:20px;
+  height:20px;
+  top:5px;
+  left:3px;
+  background:#000;
+  border-radius:50%;
+
+
+
+}
+
+
+
+@media (max-width:1100px){
+    .wrapper-green-virus{
+        display:none;
+    }
+    .wrapper-3-virus{
+        display:none;
+        
+    }
+    .wrapper-red-virus{
+        display:none;
+
+        
+    }
+
+}

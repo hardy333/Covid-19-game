@@ -1,0 +1,503 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+
+*{
+    box-sizing:border-box;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+a{
+    text-decoration:none;
+    color:#2ab615;
+}
+a:nth-child(3){
+    color:#2ab615;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    background:#333;
+    color:#fff;
+    line-height:1.6;
+    position:relative;
+}
+/*********** LOADER **************/
+
+.loader-container{
+	width:100%;
+	height:100vh;
+	overflow:hidden;
+	background:#8c7ae6;
+	position:absolute;
+	top:0;
+	left:0;
+	display:flex;
+	justify-content: center;
+	align-items:center;
+	 user-select: none;
+	 -webkit-user-drag: none; 
+     transition:opacity 0.5s ease-in-out;
+     z-index:99999999999999;
+
+}
+.loader-container img{
+	width:100px;
+	box-shadow: 0 0 10px;
+	border-radius:50px;
+	
+    user-select: none;
+	 -webkit-user-drag: none; 
+
+	 animation:image 0.5s ease-in-out infinite;
+
+}
+
+@keyframes image{
+  0% {
+    transform:rotate(0deg);
+  }
+  
+  100% {
+    transform:rotate(360deg);
+  }
+}
+
+
+
+/*  slider styles */
+.slider{
+    position:relative;
+    height:100vh;
+    width:100%;
+
+}
+
+.slide{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100vh;
+    opacity: 0;
+    transition:opacity 0.4s ease-in-out;
+}
+.slide.current{
+    opacity:1;
+
+}
+
+.slide .content{
+    position:absolute;
+    bottom:20px;
+    left:-600px;
+    opacity:0;
+    width:500px;
+    background:rgba(255,255,255,0.8);
+    color:#333;
+    padding:15px;
+    border-radius:10px;
+    padding-top:10px;
+
+
+}
+.current .content  h1 img{
+    position:absolute;
+    bottom:38px;
+    left:400px;
+    opacity:1;
+    
+}
+
+.current .content{
+    opacity:1;
+    transform:translateX(600px);
+    transition:all 0.4s ease-in-out 0.3s;
+
+}
+.slide .content h1 {
+    margin-bottom:10px;
+
+}
+
+/* buttons */ 
+.buttons button#next{
+    position:absolute;
+    top:50%;
+    right:15px;
+}
+.buttons button#prev{
+    position:absolute;
+    top:50%;
+    left:15px;
+}
+.buttons button{
+    border:2px solid #fff;
+    background-color:transparent;
+    color:#fff;
+    cursor:pointer;
+    padding:10px 12px;
+    border-radius:50%;
+    outline:none;
+    font-size:10px;
+
+}
+.buttons button:hover{
+    background:#fff;
+    color:#333;
+}
+
+
+
+/* background images */ 
+.slide:nth-child(1){
+    background: url('img2 (6).jpg') no-repeat
+    center center/cover;
+}
+.slide:nth-child(2){
+    background: url('img2 (7).jpg') no-repeat
+    center top/cover;
+}
+.slide:nth-child(3){
+    background: url('img2 (2).jpg') no-repeat
+    center 20%/cover;
+}
+.slide:nth-child(4){
+    background: url('img2 (9).jpg') no-repeat
+    center 40%/cover;
+}
+.slide:nth-child(5){
+    background: url('img2 (4).jpg') no-repeat
+    center top/cover;
+}
+.slide:nth-child(6){
+    background: url('img2 (5).jpg') no-repeat
+    center center/cover;
+}
+/***************** END of  slider things ****************************/
+
+
+
+/**********************Game things ******************/
+
+.game-info{
+    position:absolute;
+    top:20px;
+    left:10px;
+    z-index:999999999;
+    background:rgb(24, 21, 21);
+    opacity: 0.95;
+    width:600px;
+    border-radius:5px;
+    height:240px;
+    padding:10px  10px;
+    box-sizing: border-box;
+    transition:left 0.2s ease-in-out;
+    padding-left:20px;
+    border:2px #2ab615 solid;
+}
+.game-info h3{
+    color:#fff;
+    opacity: 999;
+    font-weight:bold;
+    color:#2ab615;
+}
+.game-info h3 span{
+    font-size:20px;
+    color:#fff;
+}
+
+/**************  right ***************/
+.about{
+    position:absolute;
+    top:20px;
+    right:10px;
+    z-index:999999999;
+    background:rgb(24, 21, 21);
+    width:600px;
+    height:240px;
+    padding:20px 10px;
+    border-radius:5px;
+    box-sizing: border-box;
+    opacity: 0.95;
+    transition:right 0.2s ease-in-out;
+    padding-left:20px;
+    border:2px #2ab615 solid;
+    overflow-y:hidden;
+}
+.about p{
+    line-height:1.8rem;
+}
+.about p span{
+    font-size:27px;
+    color:#2ab615;
+}
+
+/**************** nickanme/button ************/
+.nickname{
+    position:absolute;
+    top:300px;
+    left:50%;
+    transform:translateX(-50%);
+    z-index:999999;
+    background:rgb(24, 21, 21);
+    border-radius:5px;
+    width:300px;
+    padding:20px 40px;
+    opacity:0.96;
+}
+.nickname label{
+    display:block;
+    position:absolute;
+    top:10%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    font-size:18px;
+    
+}
+.nickname input{
+    display:block;
+    width:100%;
+    margin:20px 0px;
+    height:40px;
+    font-size:20px;
+    border-radius:3px;
+    padding:0 3px;
+
+}
+.nickname button{
+    display:block;
+    padding:10px 2px;
+    border-radius:5px;
+    width:100%;
+    background:#2ab615;
+    border:0px;
+    outline:none;
+    cursor:pointer;
+    font-weight:bold;
+    letter-spacing: 4px;
+    font-size:20px;
+    box-shadow: 0px 4px #2a851d;
+
+}
+.nickname button:hover{
+    background:#28f009;
+    box-shadow: 0px 4px #37922b;
+
+
+}
+
+/*********** info buttons *******************************/
+.left-button{
+    position:absolute;
+    top:5px;
+    left:10px;
+    z-index:9999;
+    display:none;
+
+}
+.right-button{
+    position:absolute;
+    top:5px;
+    right:10px;
+    z-index:9999;
+    display:none;
+
+}
+.right-button button,
+.left-button button{
+    border:0;
+    padding:5px 3px;
+    height:30px;
+    width:100px;
+    font-size:16px;
+    background:rgb(24, 21, 21);
+    color:#fff;
+    border:2px solid black;
+    border-radius:4px;
+    width:120px;
+    padding:4px 2px;
+}
+.right-button button:hover,
+.left-button button:hover{
+    
+    color:rgb(24, 21, 21);
+    background:#fff;
+    cursor:pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width:1230px){
+         
+    /**********************Game things ******************/
+
+    .game-info{
+       
+        left:-1000px;
+    
+        height:auto;
+        padding:5px 5px;
+        top:40px;
+        padding-left:20px;
+        
+
+    }
+    /**************  right ***************/
+    .about{
+        right:-1000px;
+        height:auto;
+        padding:5px 5px;
+        top:40px;
+      
+        padding-left:20px;
+
+    }
+    .currentLeft{
+        left:0px;
+    }
+    .currentRight{
+        right:0px;
+    }
+
+    /*************** butttons ***********/
+    .left-button{
+       display:inline-block;
+    }
+    .right-button{
+        display:inline-block;
+
+    }
+
+}
+
+@media(max-width:800px){
+    .slide .content{
+        bottom:20px;
+        left:-100%;
+        width:100%;
+    }
+    .current .content{
+        transform:translate(100%,0);
+    }
+   
+
+   
+        
+    /**********************Game things ******************/
+
+    .game-info{
+        top:40px;
+        left:-1000px;
+        height:auto;
+        width:100%;
+        padding:5px 0px;
+        padding-left:20px;
+      
+
+    }
+    /**************  right ***************/
+    .about{
+        top:40px;
+        right:-1000px;
+        height:auto;
+        width:100%;
+        padding:5px 5px;
+        padding-left:20px;
+
+      
+
+    }
+    .currentLeft{
+        left:0px;
+    }
+    .currentRight{
+        right:0px;
+    }
+    /**********  nickname/ button **********/
+    .nickname {
+        position:absolute;
+        top:310px;
+        width:300px;
+
+    }
+   
+}
+@media (max-width:400px){
+    /**************** nickanme/button ************/
+    .nickname{
+        top:100px;
+        left:50%;
+        border-radius:5px;
+        width:240px;
+        padding:20px 10px;
+        opacity:0.96;
+        padding-top:40px;
+    }
+    .nickname label{
+       font-size:16px;
+       padding:0;
+       margin:0;
+       width:100%;
+       display:block;
+       position:absolute;
+       top:10%;
+       left:70%;
+       transform:translate(-50%,-50%);
+    }
+
+    .nickname input{
+        margin:10px 0px;
+        margin-top:10px;
+        height:35px;
+        font-size:16px;
+        border-radius:3px;
+
+    }
+    .nickname button{
+        display:block;
+        padding:20px 2px;
+        border-radius:5px;
+        width:100%;
+        letter-spacing: 2px;
+        font-size:16px;
+        
+
+    }
+        /***********  content text slide *********/
+        .slide .content{
+          
+        bottom:80px;
+        width:100%;
+        
+        }
+        .current .content  h1 img{
+          
+        bottom:80px;
+        width:100%;
+            
+        }
+
+}
