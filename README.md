@@ -1,4 +1,5 @@
 # Covid game - კოვიდ თამაში.
+[./game-screenshots/game-screenshot.png](game image)
 
 In this game you have to fight covid-19 ciruses in order to save mankindl.
 ამ თამაშში თქვენ უნდა ებძვით კოვიდ ვირუსს, რათა გადაარჩინოთ კაცობრიობა.
