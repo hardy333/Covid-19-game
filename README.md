@@ -1,5 +1,6 @@
 # Covid game - კოვიდ თამაში.
 ![Game image](./game-screenshots/game-screenshot.png)
+[Play live](https://hardy333.github.io/Covid-19-game/)
 
 In this game you have to fight covid-19 ciruses in order to save mankindl.
 ამ თამაშში თქვენ უნდა ებძვით კოვიდ ვირუსს, რათა გადაარჩინოთ კაცობრიობა.
