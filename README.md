@@ -1,7 +1,7 @@
 # Covid game - კოვიდ თამაში.
 
 In this game you have to fight covid-19 ciruses in order to save mankindl.
-ამ ტამაშში თქვენ უნდა ებძვით კოვიდ ვირუსს, რათა გადაარჩინოთ კაცობრიობა.
+ამ თამაშში თქვენ უნდა ებძვით კოვიდ ვირუსს, რათა გადაარჩინოთ კაცობრიობა.
 
 _// Interface of the game is in Georgian language_ 
 
